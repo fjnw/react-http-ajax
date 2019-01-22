@@ -10,11 +10,7 @@ class FullPost extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
-        const query = new URLSearchParams(this.props.location.search);
-        for (let param of query.entries()) {
-            console.log(param); // yields ['start', '5']
-        }
+        // console.log(this.props)
 
         if (this.props.match.params.id) {
             if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id) ) {
@@ -30,7 +26,7 @@ class FullPost extends Component {
     deletePostHandler = () => {
         axios.delete('/posts/' + this.props.id)
             .then(response => {
-                console.log(response)
+                // console.log(response)
             })
     }
 
