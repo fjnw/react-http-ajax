@@ -14,7 +14,7 @@ class NewPost extends Component {
     }
 
     componentDidMount () {
-        // If unauth => this.props.history.replace('posts');
+        // If unauth => this.props.history.replace('posts'); // not preferred because data could already have left external servers before restricted on the parent if rendering childcomponents.
         console.log(this.props);
 
         const query = new URLSearchParams(this.props.location.search);
