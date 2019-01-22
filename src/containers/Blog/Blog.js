@@ -7,7 +7,6 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
-import FullPost from './FullPost/FullPost';
 import './Blog.css';
 
 class Blog extends Component {
@@ -19,12 +18,12 @@ class Blog extends Component {
                         <ul>
                             <li><NavLink 
                                         activeClassName="my-active"
-                                        to="/" 
+                                        to="/posts/" 
                                         exact
                                         activeStyle={{
                                             color: '#fa923f',
                                             textDecoration: 'underline'
-                                        }}>Home</NavLink></li>
+                                        }}>Posts</NavLink></li>
                             <li><NavLink to={{
                                 // example.com/new-post
                                 // pathname: this.props.match.url + 'new-post',  //withRouter imported from react-router-dom and wrapping withRouter(Blog) needed
@@ -39,10 +38,9 @@ class Blog extends Component {
                 {/* <Route path="/" exact render={ () => <h1>Home</h1>}/>
                 <Route path="/"  render={ () => <h1>Home 2</h1>}/> */}
 
-                <Route path="/" exact component={Posts} />
                 <Switch>
                     <Route path="/new-post" component={NewPost} />
-                    <Route path="/:id" exact component={FullPost} />
+                    <Route path="/posts" component={Posts} />
                 </Switch>
             </div>
         );
