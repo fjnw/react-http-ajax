@@ -14,6 +14,7 @@ class NewPost extends Component {
     }
 
     componentDidMount () {
+        // If unauth => this.props.history.replace('posts');
         console.log(this.props);
 
         const query = new URLSearchParams(this.props.location.search);
