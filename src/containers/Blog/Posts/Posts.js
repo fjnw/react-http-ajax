@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import axios from '../../../axios';
 import Post from '../../../components/Post/Post';
 import './Posts.css';
@@ -15,6 +16,8 @@ class Posts extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
+
     // axios.get('/postssss/')
     axios.get('/posts/')
         .then(response => {
@@ -43,6 +46,8 @@ class Posts extends Component {
                 title={post.title}
                 key={post.id}
                 author={post.author}
+                // {...this.props}
+                // match={post.author}
                 clicked={() => this.postSelectedHandler(post.id)} />
         })
     }
